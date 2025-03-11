@@ -1,0 +1,72 @@
+{
+    "name": "@lydio/semantics",
+    "version": "1.0.0",
+    "description": "Structured, Meaningful HTML Composition for Lydio nodes | WARNING: Copyright 2015-2025 Alex Stevovich. All Rights Reserved. Unauthorized use, copying, modification, or distribution is strictly prohibited. See LICENSE for full terms.",
+    "exports": {
+        "import": "./src/index.js",
+        "require": "./gen/index.cjs"
+    },
+    "type": "module",
+    "files": [
+        "./src/",
+        "./gen"
+    ],
+    "main": "./gen/index.cjs",
+    "scripts": {
+        "test": "vitest",
+        "tsify": "npx tsc --declaration --emitDeclarationOnly --outFile index.d.ts",
+        "preamble": "preamble --apply --dir ./src/",
+        "zord": "filezord --zord --dir ./ --id pkg:lydio-semantics",
+        "pretty": "npx prettier --write .",
+        "lint": "eslint ./src/",
+        "lint:fix": "eslint --fix ./src/",
+        "build": "npm run preamble && npm run pretty && npm run lint:fix && npm run tsify && node build.js && preamble --apply --dir ./gen/  && npm run zord"
+    },
+    "license": "UNLICENSED",
+    "author": {
+        "name": "Alex Stevovich",
+        "email": "alex.stevovich@gmail.com",
+        "url": "https://alexstevovich.com"
+    },
+    "keywords": [
+        "lydio",
+        "semantics",
+        "html",
+        "structured-html",
+        "semantic-html",
+        "html-generator",
+        "markup",
+        "document-structure",
+        "accessibility",
+        "aria",
+        "seo",
+        "audit",
+        "validation",
+        "web-development",
+        "web-standards",
+        "web-accessibility",
+        "html5",
+        "metadata",
+        "data-extraction",
+        "json-representation",
+        "semantic-data",
+        "html-parsing",
+        "dynamic-html",
+        "automated-testing",
+        "frontend",
+        "templating"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexstevovich/lydio-semantics.git"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.22.0",
+        "eslint": "^9.21.0",
+        "eslint-plugin-prettier": "^5.2.3",
+        "markdownlint": "^0.37.4",
+        "markdownlint-cli": "^0.44.0",
+        "prettier": "^3.5.3",
+        "vitest": "^3.0.8"
+    }
+}
