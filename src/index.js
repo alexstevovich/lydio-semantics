@@ -28,7 +28,7 @@
  *
  * [Preamble Metadata]
  ********************************************************/
-import { Fragment, Leaf, Tag } from '@lydio/html';
+import { Fragment, Leaf, Tag } from 'lydio';
 
 export class Site extends Fragment {
     static get nodeType() {
